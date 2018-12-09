@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HtmlHelperDemo.Extensions
 {
-    public static class SimpleHtmlHelper
+    public static class HtmlHelperExtensions
     {
         public static IHtmlContent YesNo(this IHtmlHelper htmlHelper, bool isTrue)
         {
@@ -41,6 +41,7 @@ namespace HtmlHelperDemo.Extensions
 
             return builder;
         }
+
         public static IHtmlContent DisplayMailingAddress(this IHtmlHelper htmlHelper, Person person)
         {
             var builder = new TagBuilder("address");
@@ -58,25 +59,5 @@ namespace HtmlHelperDemo.Extensions
 
             return builder;
         }
-
-        public static IHtmlContent IsActive(this IHtmlHelper htmlHelper, bool isActive)
-        {
-            var x = new HtmlContentBuilder();
-            var text = isActive ? "Active" : "Inactive";
-            return x.Append(text);
-        }
-
-        public static IHtmlContent ShortDateFor(this IHtmlHelper htmlHelper, DateTime? dateTime)
-        {
-            var x = new HtmlContentBuilder();
-            var text = "No Date";
-            if (dateTime.HasValue)
-            {
-                text = dateTime.Value.ToShortDateString();
-            }
-            return x.Append(text);
-        }
     }
-
-
 }
