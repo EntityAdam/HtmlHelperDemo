@@ -1,0 +1,22 @@
+﻿@page
+@using Extensions
+@model HtmlHelperDemo.Pages.AddressModel
+@{
+    ViewData["Title"] = "Address";
+}
+
+<h1>Short Address</h1>
+<dl>
+    @foreach (var person in Model.People)
+    {
+        <dt>Name: @person.Name</dt>
+        <dd>@Html.DisplayShortAddress(person)</dd>
+    }
+</dl>
+<hr />
+
+<h1>Mailing Address</h1>
+@foreach (var person in Model.People)
+{
+    @Html.DisplayMailingAddress(person)
+}

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using HtmlHelperDemo.DataProvider;
 using HtmlHelperDemo.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,11 +6,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HtmlHelperDemo.Pages
 {
-    public class IndexModel : PageModel
+    public class AddressModel : PageModel
     {
         private readonly IPersonProvider _personProvider;
 
-        public IndexModel(IPersonProvider personProvider)
+        public AddressModel(IPersonProvider personProvider)
         {
             _personProvider = personProvider;
         }
